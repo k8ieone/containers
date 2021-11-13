@@ -1,4 +1,5 @@
 FROM docker.io/satcom886/arch-builder:base
+LABEL org.opencontainers.image.source=https://github.com/satcom886/cr-docker
 
 # add the custom repo
 RUN sed -i '/^\[core\]/i \[s886\]\nSigLevel = Optional TrustAll\nServer = https://repo.mcld.eu/$arch' /etc/pacman.conf
