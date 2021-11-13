@@ -1,4 +1,5 @@
 FROM docker.io/k8ieone/arch-builder:base
+LABEL org.opencontainers.image.source=https://github.com/k8ieone/cr-docker
 
 # add the custom repo
 RUN sed -i '/^\[core\]/i \[s886\]\nSigLevel = Optional TrustAll\nServer = https://repo.example.com/$arch' /etc/pacman.conf
