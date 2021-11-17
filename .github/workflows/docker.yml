@@ -1,10 +1,10 @@
-name: Build the container
+name: Build the CrowdRender container
 
 on:
   push:
     paths:
-      - 'Dockerfile'
-      - '.github/workflows/docker.yml'
+      - 'cr-docker/Dockerfile'
+      - '.github/workflows/cr-docker.yml'
 
 jobs:
   cr-docker:
@@ -30,7 +30,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2.4.0
         with:
-          context: .
+          context: cr-docker/
           platforms: linux/amd64,linux/arm64
           push: true
           tags: ghcr.io/${{ secrets.DOCKERHUB_USERNAME }}/cr-docker:latest
