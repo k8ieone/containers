@@ -1,5 +1,6 @@
 FROM docker.io/satcom886/arch-builder:base
-LABEL org.opencontainers.image.source=https://github.com/satcom886/cr-docker
+LABEL org.opencontainers.image.source=https://github.com/satcom886/containers
+LABEL org.opencontainers.image.description Blender 2.93.5
 
 # add the custom repo
 RUN sed -i '/^\[core\]/i \[s886\]\nSigLevel = Optional TrustAll\nServer = https://repo.mcld.eu/$arch' /etc/pacman.conf
@@ -12,6 +13,8 @@ RUN git clone https://github.com/crowdrender/cr-docker.git
 
 # CR environment variables
 ENV CR_VERSION latest
+ENV BLENDER_VERSION "2.93"
+ENV BLENDER_PYV "py_3_9"
 ENV persistent "false"
 ENV local "true"
 ENV usegpu "false"
