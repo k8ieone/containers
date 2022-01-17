@@ -1,7 +1,7 @@
 FROM docker.io/lopsided/archlinux:latest
 LABEL maintainer="Rostislav Medvěd <rostik.medved@gmail.com>"
-LABEL source="https://github.com/satcom886/ARM-PKGBUILDs"
-LABEL org.opencontainers.image.source https://github.com/satcom886/ARM-PKGBUILDs
+LABEL source="https://github.com/satcom886/containers/arch-base"
+LABEL org.opencontainers.image.source https://github.com/satcom886/containers/arch-base
 
 # Install packages required for building
 RUN pacman -Sy --noconfirm --noprogressbar shadow sudo awk git subversion zip pacman-contrib base-devel
