@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Build script inspired by mguentner/remote-aur-builder
+
+export AUR_USER=builder
+sudo -u $AUR_USER mkdir /home/$AUR_USER/built
+
+sudo -u $AUR_USER bash -c "pikaur -S --needed --noprogressbar --needed --noconfirm $1"
+
+find /home/$AUR_USER/.cache/pikaur/pkg -iname *pkg.tar* -exec mv "{}" /home/$AUR_USER/built/ \;

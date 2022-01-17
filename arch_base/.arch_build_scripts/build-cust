@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Inspired by mguentner/remote-aur-builder
+
+export AUR_USER=builder
+sudo -u $AUR_USER bash -c "cd /home/$AUR_USER/ && git clone https://github.com/satcom886/builds"
+sudo -u $AUR_USER mkdir /home/$AUR_USER/built
+
+sudo -u $AUR_USER bash -c "cd /home/$AUR_USER/builds/PKGBUILDs/$1 && pikaur -P PKGBUILD --needed --noprogressbar --noconfirm"
+
+find /home/$AUR_USER/.cache/pikaur/pkg -iname *pkg.tar* -exec mv "{}" /home/$AUR_USER/built/ \;
