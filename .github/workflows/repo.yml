@@ -3,10 +3,10 @@ name: Build the arch-repo container
 on:
   push:
     paths:
-      - 'Dockerfile'
-      - '.github/workflows/docker.yml'
-      - 'entrypoint.sh'
-      - 'add-package.sh'
+      - 'arch-repo/Dockerfile'
+      - '.github/workflows/repo.yml'
+      - 'arch-repo/entrypoint.sh'
+      - 'arch-repo/add-package.sh'
   workflow_run:
     workflows: [Build base image]
     types:
