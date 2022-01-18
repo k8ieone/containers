@@ -14,7 +14,7 @@ RUN git clone https://github.com/crowdrender/cr-docker.git
 # CR environment variables
 ENV CR_VERSION latest
 ENV BLENDER_VERSION "2.93"
-ENV BLENDER_PYV "py_3_9"
+ENV BLENDER_PYV "py_3_10"
 ENV persistent "false"
 ENV local "true"
 ENV usegpu "false"
