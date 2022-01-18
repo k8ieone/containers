@@ -1,7 +1,7 @@
 #!/bin/bash
 
-mkdir -p /packages/webdav /packages/webdav/aarch64 /packages/webdav/x86_64
-mkdir -p /packages/http /packages/http/aarch64 /packages/http/x86_64
+mkdir -p /packages/webdav /packages/webdav/aarch64 /packages/webdav/x86_64 /packages/webdav/armv7h
+mkdir -p /packages/http /packages/http/aarch64 /packages/http/x86_64 /packages/http/armv7h
 
 rclone serve webdav /packages/webdav --user=$WEBDAB_USER --pass=$WEBDAV_PASS --addr=:8081 &
 darkhttpd /packages/http --port 8080 &
