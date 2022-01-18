@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'cr-docker/Dockerfile'
-      - '.github/workflows/cr-docker.yml'
+      - '.github/workflows/cr.yml'
 
 jobs:
   cr-docker:
