@@ -1,4 +1,4 @@
-FROM docker.io/satcom886/blender:latest
+FROM ghcr.io/satcom886/blender:latest
 
 # Install some utils
 RUN pacman -Sy --noconfirm --noprogressbar wget unzip
