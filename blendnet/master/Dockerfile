@@ -14,4 +14,4 @@ RUN unzip blendnet-0.3.10.zip
 RUN mkdir /workdir
 WORKDIR /workdir
 
-ENTRYPOINT ["/usr/bin/blender", "-b", "-noaudio", "-P /blendnet/master.py"]
+ENTRYPOINT ["/usr/bin/blender", "-b", "-noaudio", "-P", "/blendnet/master.py"]
