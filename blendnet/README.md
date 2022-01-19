@@ -17,9 +17,11 @@ services:
 ```yaml
 version: "3.8"
 services:
-  bn-worker:
+  bn-agent:
     image: ghcr.io/satcom886/blendnet-worker:latest
     restart: unless-stopped
+    volumes:
+      - server.key:/workdir/server.key
     ports:
       - 9443:9443
 ```
