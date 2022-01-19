@@ -7,6 +7,7 @@ services:
     image: ghcr.io/satcom886/blendnet-manager:latest
     restart: unless-stopped
     volumes:
+      - /var/run/avahi-daemon/socket:/var/run/avahi-daemon/socket
       - /srv/docker_storage/blendnet:/workdir
     ports:
       - 7443:8443
@@ -21,7 +22,8 @@ services:
     image: ghcr.io/satcom886/blendnet-agent:latest
     restart: unless-stopped
     volumes:
-      - server.key:/workdir/server.key
+      - ./ca.key:/workdir/ca.key:ro
+      - ./ca.crt:/workdir/ca.crt:ro
     ports:
       - 9443:9443
 ```
