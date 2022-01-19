@@ -1,10 +1,10 @@
-# Master
+# Manager
 
 ```yaml
 version: "3.8"
 services:
-  bn-master:
-    image: ghcr.io/satcom886/blendnet-master:latest
+  bn-manager:
+    image: ghcr.io/satcom886/blendnet-manager:latest
     restart: unless-stopped
     volumes:
       - /srv/docker_storage/blendnet:/workdir
