@@ -1,12 +1,7 @@
-FROM docker.io/k8ieone/arch-builder:base
-LABEL org.opencontainers.image.source=https://github.com/k8ieone/containers
-LABEL org.opencontainers.image.description Blender 2.93.5
+FROM docker.io/k8ieone/blender:latest
 
-# add the custom repo
-RUN sed -i '/^\[core\]/i \[s886\]\nSigLevel = Optional TrustAll\nServer = https://repo.example.com/$arch' /etc/pacman.conf
-
-# Install Blender
-RUN pacman -Sy --noconfirm --noprogressbar blender wget unzip
+# Install some utils
+RUN pacman -Sy --noconfirm --noprogressbar wget unzip
 
 RUN wget https://github.com/state-of-the-art/BlendNet/releases/download/v0.3.10/blendnet-0.3.10.zip
 RUN unzip blendnet-0.3.10.zip
