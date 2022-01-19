@@ -1,4 +1,4 @@
-FROM docker.io/k8ieone/blender:latest
+FROM ghcr.io/k8ieone/blender:latest
 
 # Install some utils
 RUN pacman -Sy --noconfirm --noprogressbar wget unzip
