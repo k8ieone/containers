@@ -18,7 +18,7 @@ services:
 version: "3.8"
 services:
   bn-agent:
-    image: ghcr.io/satcom886/blendnet-worker:latest
+    image: ghcr.io/satcom886/blendnet-agent:latest
     restart: unless-stopped
     volumes:
       - server.key:/workdir/server.key
