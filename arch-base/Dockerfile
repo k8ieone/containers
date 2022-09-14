@@ -1,7 +1,4 @@
 FROM docker.io/lopsided/archlinux:latest
-LABEL maintainer="Rostislav Medvěd <rostik.medved@gmail.com>"
-LABEL source="https://github.com/k8ieone/containers"
-LABEL org.opencontainers.image.source https://github.com/k8ieone/containers
 
 # Install packages required for building
 RUN pacman -Sy --noconfirm --noprogressbar shadow sudo awk git subversion zip pacman-contrib base-devel
