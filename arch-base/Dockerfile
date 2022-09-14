@@ -1,4 +1,4 @@
-FROM docker.io/lopsided/archlinux:latest
+FROM lopsided/archlinux:latest
 
 # Install packages required for building
 RUN pacman -Sy --noconfirm --noprogressbar shadow sudo awk git subversion zip pacman-contrib base-devel
