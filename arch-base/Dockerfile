@@ -1,7 +1,7 @@
 FROM lopsided/archlinux:latest
 
 # Install packages required for building
-RUN pacman -Sy --noconfirm --noprogressbar shadow sudo awk git subversion zip pacman-contrib base-devel
+RUN pacman -Sy --noconfirm --noprogressbar --needed shadow sudo awk git subversion zip pacman-contrib base-devel
 
 # Enable parallel downloads in pacman's config file
 RUN sed -i '/^#.*ParallelDownloads /s/^#//' /etc/pacman.conf
