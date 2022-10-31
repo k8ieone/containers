@@ -4,8 +4,8 @@ type: docker
 name: default
 
 steps:
-- name: backend
-  image: golang
+- name: test
+  image: satcom886/arch-builder:base
   commands:
-  - go build
-  - go test
+  - build-aur yay
+  - find /home/builder/built/ -iname *pkg.tar* -exec pacman -U --noconfirm "{}"  \;
