@@ -8,6 +8,6 @@ RUN cd /home/builder && sudo -u builder git clone https://aur.archlinux.org/pika
 RUN cd /home/builder/pikaur && sudo -u builder makepkg -si --noconfirm && cd .. && rm -r pikaur
 
 # Copy the build script to the container
-ADD .arch_build_scripts/build-aur /usr/bin/build-aur
-ADD .arch_build_scripts/build-cust /usr/bin/build-cust
-ADD .arch_build_scripts/build-local /usr/bin/build-local
+ADD .arch_build_scripts/build-aur /usr/local/bin/build-aur
+ADD .arch_build_scripts/build-cust /usr/local/bin/build-cust
+ADD .arch_build_scripts/build-local /usr/local/bin/build-local
