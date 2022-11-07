@@ -3,9 +3,9 @@ name: Build base image
 on:
   push:
     paths:
-      - 'arch-base/Dockerfile'
+      - '00_base/Dockerfile'
       - '.github/workflows/base.yml'
-      - 'arch-base/.arch_build_scripts/*'
+      - '00_base/.arch_build_scripts/*'
 
 jobs:
   base:
@@ -31,7 +31,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v2.4.0
         with:
-          context: ./arch-base
+          context: ./00_base
           platforms: linux/amd64,linux/arm64,linux/arm/v7
           push: true
           tags: ghcr.io/${{ github.actor }}/arch-builder:latest

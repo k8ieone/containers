@@ -20,7 +20,7 @@ RUN useradd -m builder
 RUN tee -a /etc/sudoers <<<"builder ALL=(ALL) ALL"
 RUN tee -a /etc/sudoers <<<"Defaults:builder    !authenticate"
 
-# Install yay
+# Install pikaur
 RUN cd /home/builder && sudo -u builder git clone https://aur.archlinux.org/pikaur.git
 RUN cd /home/builder/pikaur && sudo -u builder makepkg -si --noconfirm && cd .. && rm -r pikaur
 
