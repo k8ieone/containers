@@ -1,4 +1,4 @@
-name: Build the arch-repo container
+name: Build the arch-repo image
 
 on:
   push:
