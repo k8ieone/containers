@@ -6,8 +6,8 @@ RUN sed -i '/^#.*ParallelDownloads /s/^#//' /etc/pacman.conf
 # Enable parallel makes
 RUN echo "MAKEFLAGS=-j\$(nproc)" | tee -a /etc/makepkg.conf
 
-# Install pacman-contrib
-RUN pacman -Sy --noconfirm --noprogressbar --needed pacman-contrib
+# Install basic packages
+RUN pacman -Sy --noconfirm --noprogressbar --needed pacman-contrib shadow sudo
 
 # Sort the mirrorlist
 RUN mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup && rankmirrors /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist && rm /etc/pacman.d/mirrorlist.backup
