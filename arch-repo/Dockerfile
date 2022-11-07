@@ -1,4 +1,4 @@
-FROM docker.io/satcom886/arch-builder:base
+FROM ghcr.io/satcom886/arch-builder:base
 
 RUN pacman -S --noconfirm --noprogressbar rclone darkhttpd
 RUN mkdir /packages
