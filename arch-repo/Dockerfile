@@ -1,4 +1,4 @@
-FROM ghcr.io/satcom886/arch-builder:base
+FROM ghcr.io/k8ieone/arch-builder:latest
 
 RUN pacman -S --noconfirm --noprogressbar rclone darkhttpd
 RUN mkdir /packages
