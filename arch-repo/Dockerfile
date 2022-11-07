@@ -1,4 +1,4 @@
-FROM docker.io/k8ieone/arch-builder:base
+FROM ghcr.io/k8ieone/arch-builder:base
 
 RUN pacman -S --noconfirm --noprogressbar rclone darkhttpd
 RUN mkdir /packages
