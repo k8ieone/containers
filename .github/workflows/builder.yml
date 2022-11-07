@@ -12,7 +12,7 @@ on:
       - completed
 
 jobs:
-  arch-repo:
+  builder:
     runs-on: ubuntu-latest
     steps:
       -
