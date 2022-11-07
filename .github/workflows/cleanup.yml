@@ -1,0 +1,19 @@
+name: "Clean old images"
+
+on:
+  schedule:
+    - cron: '0 0 */14 * *' # runs bi-weekly
+  workflow_dispatch: # allows for manual invocation
+
+jobs:
+  retention-policy:
+    runs-on: 'ubuntu-latest'
+    steps:
+      - name: Delete old images
+        uses: snok/container-retention-policy@v1
+        with:
+          image-names: arch-base, arch-repo, arch-builder
+          cut-off: Two days ago UTC
+          untagged-only: true
+          account-type: personal
+          token: ${{ secrets.GHCR_TOKEN }}
