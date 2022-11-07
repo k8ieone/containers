@@ -4,10 +4,9 @@ on:
   push:
     paths:
       - '01_builder/Dockerfile'
-      - '.github/workflows/builder.yml'
       - '01_builder/.arch_build_scripts/*'
   workflow_run:
-    workflows: [Build base image]
+    workflows: [Build the base image]
     types:
       - completed
 
