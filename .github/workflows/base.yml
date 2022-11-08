@@ -5,6 +5,7 @@ on:
     paths:
       - '00_base/Dockerfile'
       - '.github/workflows/base.yml'
+  workflow_dispatch: # allows for manual invocation
 
 jobs:
   base:
