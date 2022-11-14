@@ -1,4 +1,4 @@
-FROM lopsided/archlinux:latest
+FROM docker.io/lopsided/archlinux:latest
 
 # Enable parallel downloads in pacman's config file
 RUN sed -i '/^#.*ParallelDownloads /s/^#//' /etc/pacman.conf
