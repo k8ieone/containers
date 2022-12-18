@@ -1,4 +1,5 @@
 FROM docker.io/lopsided/archlinux:latest
+LABEL org.opencontainers.image.source = "https://github.com/k8ieone/containers"
 
 # Enable parallel downloads in pacman's config file
 RUN sed -i '/^#.*ParallelDownloads /s/^#//' /etc/pacman.conf
