@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  base:
+  flamenco-manager:
     runs-on: ubuntu-latest
     steps:
       -
