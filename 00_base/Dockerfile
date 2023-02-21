@@ -10,6 +10,10 @@ RUN echo "MAKEFLAGS=-j\$(nproc)" | tee -a /etc/makepkg.conf
 # Install basic packages
 RUN pacman -Sy --noconfirm --noprogressbar --needed pacman-contrib shadow sudo
 
+# Enable multilib
+COPY multien /
+RUN /multien
+
 # Sort the mirrorlist
 RUN mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup && rankmirrors /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist && rm /etc/pacman.d/mirrorlist.backup
 

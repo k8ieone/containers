@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if grep 'multilib' /etc/pacman.conf
+then
+	echo "Is x86"
+	echo "Enabling Multilib"
+	echo "" >> /etc/pacman.conf
+	echo "[multilib]" >> /etc/pacman.conf
+	echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+else
+	echo "Not x86"
+fi
