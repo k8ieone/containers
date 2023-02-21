@@ -1,4 +1,4 @@
-FROM ghcr.io/k8ieone/arch-base:latest
+FROM ghcr.io/a13xie/arch-base:latest
 
 # Install packages required for building
 RUN pacman -Sy --noconfirm --noprogressbar --needed awk git subversion zip base-devel
