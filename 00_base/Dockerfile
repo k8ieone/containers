@@ -4,15 +4,15 @@ LABEL org.opencontainers.image.source = "https://github.com/a13xie/containers"
 # Enable parallel downloads in pacman's config file
 RUN sed -i '/^#.*ParallelDownloads /s/^#//' /etc/pacman.conf
 
+# Enable multilib
+COPY multien /
+RUN /multien
+
 # Enable parallel makes
 RUN echo "MAKEFLAGS=-j\$(nproc)" | tee -a /etc/makepkg.conf
 
 # Install basic packages
 RUN pacman -Sy --noconfirm --noprogressbar --needed pacman-contrib shadow sudo
-
-# Enable multilib
-COPY multien /
-RUN /multien
 
 # Sort the mirrorlist
 RUN mv /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup && rankmirrors /etc/pacman.d/mirrorlist.backup > /etc/pacman.d/mirrorlist && rm /etc/pacman.d/mirrorlist.backup
