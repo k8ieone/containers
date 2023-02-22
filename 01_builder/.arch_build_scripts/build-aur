@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Build script inspired by mguentner/remote-aur-builder
 
+set -e
 export AUR_USER=builder
 sudo -u $AUR_USER mkdir /home/$AUR_USER/built
 
