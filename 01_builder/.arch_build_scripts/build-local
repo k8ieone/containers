@@ -3,7 +3,9 @@
 
 set -e
 export AUR_USER=builder
-sudo -u $AUR_USER mkdir /home/$AUR_USER/built
+if [ ! -d /home/$AUR_USER/built ]; then
+	sudo -u $AUR_USER mkdir /home/$AUR_USER/built
+fi
 
 sudo -u $AUR_USER bash -c "pikaur -P PKGBUILD --needed --noprogressbar --noconfirm"
 
