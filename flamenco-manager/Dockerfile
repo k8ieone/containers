@@ -1,7 +1,7 @@
-FROM docker.io/alpine:latest
+FROM ghcr.io/a13xie/arch-builder:latest AS builder
+RUN build-aur flamenco-manager
 
-RUN apk add tar curl blender
-RUN curl https://flamenco.blender.org/downloads/flamenco-3.2-linux-amd64.tar.gz | tar xz
-
-WORKDIR /data
-ENTRYPOINT /flamenco-3.2-linux-amd64/flamenco-manager
+FROM ghcr.io/a13xie/arch-base:latest AS runner
+COPY --from=builder /home/builder/built/ /built/
+RUN pacman -U --noconfirm --noprogressbar /built/*.pkg.tar.*
+CMD /usr/bin/flamenco-manager
