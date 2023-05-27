@@ -2,11 +2,10 @@
 
 if grep 'multilib' /etc/pacman.conf
 then
-	echo "Is x86"
+	echo "Image is x86"
 	echo "Enabling Multilib"
-	echo "" >> /etc/pacman.conf
-	echo "[multilib]" >> /etc/pacman.conf
-	echo "Include = /etc/pacman.d/mirrorlist" >> /etc/pacman.conf
+	sed -i 's/#\[multilib\]/[multilib]/g' /etc/pacman.conf
+	sed -i '/\[multilib\]/a Server = https://repo.mcld.eu/repo/archlinux/$repo/os/$arch\nInclude = /etc/pacman.d/mirrorlist' /etc/pacman.conf
 else
 	echo "Not x86"
 fi
