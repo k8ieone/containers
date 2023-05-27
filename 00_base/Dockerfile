@@ -8,6 +8,10 @@ RUN sed -i '/^#.*ParallelDownloads /s/^#//' /etc/pacman.conf
 COPY multien /
 RUN /multien
 
+# Add repository mirror
+COPY repomirror /
+RUN /repomirror
+
 # Enable parallel makes
 RUN echo "MAKEFLAGS=-j\$(nproc)" | tee -a /etc/makepkg.conf
 
