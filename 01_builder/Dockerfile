@@ -5,7 +5,7 @@ RUN pacman -Sy --noconfirm --noprogressbar --needed awk git subversion zip base-
 
 # Install pikaur
 RUN cd /home/builder && sudo -u builder git clone https://aur.archlinux.org/pikaur.git
-RUN cd /home/builder/pikaur && sudo -u builder makepkg -si --noconfirm && cd .. && rm -r pikaur
+RUN cd /home/builder/pikaur && ulimit -n 1024000 && sudo -u builder makepkg -si --noconfirm && cd .. && rm -r pikaur
 
 # Copy the build script to the container
 ADD .arch_build_scripts/build-aur /usr/local/bin/build-aur
