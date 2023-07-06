@@ -1,5 +1,5 @@
 FROM ghcr.io/a13xie/arch-builder:latest AS builder
-RUN build-aur flamenco-manager
+RUN ulimit -n 1024000 && build-aur flamenco-manager
 
 FROM ghcr.io/a13xie/arch-base:latest AS runner
 COPY --from=builder /home/builder/built/ /built/
