@@ -1,4 +1,4 @@
-FROM ghcr.io/a13xie/arch-base:latest
+FROM ghcr.io/k8ieone/arch-base:latest
 
 RUN pacman -S --noconfirm --noprogressbar rclone darkhttpd
 RUN mkdir /packages
