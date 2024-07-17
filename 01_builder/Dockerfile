@@ -1,7 +1,7 @@
 FROM ghcr.io/k8ieone/arch-base:latest
 
 # Install packages required for building
-RUN pacman -Sy --noconfirm --noprogressbar --needed awk git subversion zip base-devel libxml2
+RUN pacman -Sy --noconfirm --noprogressbar --needed awk git git-lfs subversion zip base-devel libxml2
 
 # Install pikaur
 RUN cd /home/builder && sudo -u builder git clone https://aur.archlinux.org/pikaur.git
