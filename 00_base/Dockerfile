@@ -34,3 +34,6 @@ RUN tee -a /etc/sudoers <<<"Defaults:builder    !authenticate"
 # ccache tweaks
 RUN sudo -u builder ccache --set-config=sloppiness=locale,time_macros
 RUN sudo -u builder ccache --set-config=max_size=15.0G
+
+# Create .cache directory with the correct permissions
+RUN sudo -u builder mkdir /home/builder/.cache
