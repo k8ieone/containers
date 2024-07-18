@@ -9,4 +9,4 @@ fi
 
 sudo -u $AUR_USER bash -c "pikaur -P PKGBUILD --needed --noprogressbar --noconfirm"
 
-find /home/$AUR_USER/.cache/pikaur/pkg -iname *pkg.tar* -exec cp -v "{}" /home/$AUR_USER/built/ \;
+find /home/$AUR_USER/.cache/pikaur/pkg -iname *pkg.tar* -exec mv -v "{}" /home/$AUR_USER/built/ \;
