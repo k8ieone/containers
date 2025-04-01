@@ -9,8 +9,8 @@ COPY multien /
 RUN /multien
 
 # Add repository mirror
-COPY repomirror /
-RUN /repomirror
+# COPY repomirror /
+# RUN /repomirror
 
 # Enable parallel makes
 RUN echo "MAKEFLAGS=-j\$(nproc)" | tee -a /etc/makepkg.conf
